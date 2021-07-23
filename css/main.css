@@ -1,6 +1,12 @@
+:root {
+  --text-color: #f0f4f5;
+  --background-color:#11193a;
+  --accent-color: #ef9a9a;
+}
+
 a {
   text-decoration:none;
-  color: #fff;
+  color: var(--text-color);
 }
 
 header {
@@ -9,7 +15,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1em 1.5em;
-  background: #11193a;
+  background: var(--background-color);
 }
 
 .header__logo-container {
@@ -19,7 +25,7 @@ header {
 }
 .header__logo-container .logo {
   font-size: 2em;
-  color: #ef9a9a;
+  color: var(--accent-color);
 }
 .header__logo-container .title {
   padding: .5em;
@@ -30,11 +36,15 @@ header {
 .header__menu-container {
   display: flex;
 }
-.header__menu-container a {
-  padding: .7em;
+.header__menu-container li {
+  list-style:none;
 }
-.header__menu-container a:hover {
-  background-color:#ef9a9a;
+.header__menu-container li a {
+  padding: .7em;
+  display: block;
+}
+.header__menu-container li:hover {
+  background-color:var(--accent-color);
   border-radius: 5px;
 }
 
@@ -42,40 +52,58 @@ header {
   display: flex;
   justify-content: center;
 }
+.header__sub-container li {
+  list-style: none;
+}
 .header__sub-container .fa-twitter {
   padding: .5em;
 }
 .header__sub-container .fa-twitter:hover {
-  color: #ef9a9a;
+  color: var(--accent-color);
 }
 .header__sub-container .fa-facebook-f {
   padding: .5em;
 }
 .header__sub-container .fa-facebook-f:hover {
-  color: #ef9a9a;
+  color: var(--accent-color);
 }
 
 .fa-bars {
   display: none;
 }
 
-@media (max-width:800px) {
+
+@media (max-width:768px) {
   header {
-    display: block;
-  }
-  .header__logo-container .logo {
- 
+    flex-direction: column;
+    align-items: flex-start;
   }
   .header__menu-container {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+  }
+  .header__menu-container li {
+    width: 100%;
     text-align: center;
+  }
+  .header__sub-container{
+    width: 100%;
+    justify-content: center;
+    display: none;
   }
   .fa-bars {
     display:block;
-    color: #ef9a9a;
+    color: var(--accent-color);
     position: absolute;
     right: 1.2em;
-    top: .5em;
+    top: 1em;
     font-size: 1.5em;
+  }
+
+  .header__menu-container.active,
+  .header__sub-container.active {
+    display: flex;
   }
 }
