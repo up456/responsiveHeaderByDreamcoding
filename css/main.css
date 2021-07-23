@@ -1,0 +1,81 @@
+a {
+  text-decoration:none;
+  color: #fff;
+}
+
+header {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  background: #11193a;
+}
+
+.header__logo-container {
+  display: flex;
+  align-items: center;
+  
+}
+.header__logo-container .logo {
+  font-size: 2em;
+  color: #ef9a9a;
+}
+.header__logo-container .title {
+  padding: .5em;
+  font-size: 1.5em;
+}
+
+
+.header__menu-container {
+  display: flex;
+}
+.header__menu-container a {
+  padding: .7em;
+}
+.header__menu-container a:hover {
+  background-color:#ef9a9a;
+  border-radius: 5px;
+}
+
+.header__sub-container {
+  display: flex;
+  justify-content: center;
+}
+.header__sub-container .fa-twitter {
+  padding: .5em;
+}
+.header__sub-container .fa-twitter:hover {
+  color: #ef9a9a;
+}
+.header__sub-container .fa-facebook-f {
+  padding: .5em;
+}
+.header__sub-container .fa-facebook-f:hover {
+  color: #ef9a9a;
+}
+
+.fa-bars {
+  display: none;
+}
+
+@media (max-width:800px) {
+  header {
+    display: block;
+  }
+  .header__logo-container .logo {
+ 
+  }
+  .header__menu-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .fa-bars {
+    display:block;
+    color: #ef9a9a;
+    position: absolute;
+    right: 1.2em;
+    top: .5em;
+    font-size: 1.5em;
+  }
+}
